@@ -1,12 +1,13 @@
 package com.him.dao;
 
-import java.awt.print.Book;
 import java.util.List;
 
+import com.him.entities.Book;
+
 public interface BookDao {
-	int insert(Book b);
-	int update(Book b);
+	int insertBook(Book b);
+	int updateBook(Book b);
 	Book getBookByISBN(String isbn);
 	List<Book> getAllBooks();
-	int delete(String isbn);
+	int deleteBook(String isbn);
 }

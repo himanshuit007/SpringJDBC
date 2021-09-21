@@ -1,7 +1,5 @@
 package com.him;
 
-import java.util.Properties;
-
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +11,11 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+import com.him.dao.BookDaoImpl;
 import com.him.dao.PublisherDaoImpl;
 
 @Configuration
-@ComponentScan(basePackages = {"com.him"})
+@ComponentScan(basePackages = {"com.him.dao"})
 @PropertySource("classpath:db.properties")
 public class AppConfig {
 
@@ -45,9 +44,15 @@ public class AppConfig {
 		return j;
 	}
 
-	@Bean("publisheDAO")
+	@Bean("publisheDAOBean")
 	public PublisherDaoImpl getPublisherDAO() {
 		PublisherDaoImpl p = new PublisherDaoImpl();
+		p.setJd(getJDBCTemplate());
+		return p;
+	}
+	@Bean("bookDAOBean")
+	public BookDaoImpl getBookDAO() {
+		BookDaoImpl p = new BookDaoImpl();
 		p.setJd(getJDBCTemplate());
 		return p;
 	}

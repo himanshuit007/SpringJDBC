@@ -24,7 +24,7 @@ public class Application {
 		AbstractApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 		appContext.registerShutdownHook();
 		PublisherDao pd = (PublisherDao) appContext.getBean("publisheDAO");
-		//PublisherDao pd = (PublisherDao) appContext.getBean("p");//using componentScan
+//		PublisherDao pd = (PublisherDao) appContext.getBean("publisheDAOBean");//using componentScan
 
 		pd.insertPublisher(new Publisher("P1", "P1"));
 		pd.updatePublisher(new Publisher("P1", "P11111"));

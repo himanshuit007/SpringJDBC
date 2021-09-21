@@ -12,8 +12,9 @@ public interface Constants {
 	String PUBLISHER_GETALL = "select  * from publisher";
 	String PUBLISHER_DELETE = "delete from publisher where CODE=?";
 	
+	String BOOK_SELECT = "select * book where ISBN=?";
+	String BOOK_GETALL = "select * book";
 	String BOOK_INSERT = "insert into book values(?,?,?)";
 	String BOOK_UPDATE = "update book set BOOK_NAME = ? where ISBN=?";
-	String BOOK_SELECT = "select * book where ISBN=?";
 	String BOOK_DELETE = "delete from book where ISBN=?";
 }

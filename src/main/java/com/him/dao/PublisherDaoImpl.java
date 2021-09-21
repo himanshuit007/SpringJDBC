@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import com.him.Constants;
 import com.him.entities.Publisher;
 
-@Service("p")
+@Service("publisherDAO")
 public class PublisherDaoImpl implements PublisherDao {
 
 	@Autowired
